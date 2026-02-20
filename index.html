@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Card System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="box">
+        <h2>Smart Card Generator</h2>
+
+        <form method="POST" enctype="multipart/form-data">
+            <input type="text" name="aadhaar" placeholder="Aadhaar Number" required><br>
+            <input type="text" name="ration" placeholder="Ration Card Number" required><br>
+            <input type="text" name="licence" placeholder="Driving Licence Number" required><br>
+            <input type="file" name="face" required><br>
+            <button type="submit">Generate Smart Card</button>
+        </form>
+
+        {% if msg %}
+            <p>{{ msg }}</p>
+        {% endif %}
+
+        {% if card %}
+            <h3>Your Smart Card Number:</h3>
+            <h2>{{ card }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
